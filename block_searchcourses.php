@@ -30,7 +30,7 @@
  */
 class block_searchcourses extends block_base
 {
-    
+
     public function init()
     {
         $this->title = get_string('pluginname', 'block_searchcourses');
@@ -44,6 +44,26 @@ class block_searchcourses extends block_base
             'my' => true
         );
     }
+
+
+    /**
+     *
+     * {@inheritDoc}
+     * @see block_base::is_empty()
+     */
+    function is_empty() {
+        if ( !has_capability('blocks/searchcourses:view', $this->context) ) {
+            return true;
+        }
+        return parent::is_empty();
+    }
+
+
+    /**
+     *
+     * {@inheritDoc}
+     * @see block_base::get_content()
+     */
     public function get_content()
     {
         global $CFG,$PAGE;
