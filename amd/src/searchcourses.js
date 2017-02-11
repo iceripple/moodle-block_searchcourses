@@ -8,13 +8,13 @@
 define(['jquery', 'core/config',"jqueryui"], function ($, config,jqui) {
     return {
         initialise: function (course_count) {
-            $(function () {
-                $(document).tooltip({
-                    content: function () {
-                        return $(this).prop('title');
-                    }
-                });
-            });
+//            $(function () {
+//                $(document).tooltip({
+//                    content: function () {
+//                        return $(this).prop('title');
+//                    }
+//                });
+//            });
 
             $('#course_search_ac .typeahead').autocomplete(
                 {
